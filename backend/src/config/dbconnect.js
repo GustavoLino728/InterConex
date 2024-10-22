@@ -1,9 +1,21 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 async function conectaBanco(){
-    mongoose.connect(process.env.DB_CONNECTION_STRING);
-
-    return mongoose.connection;
+    try{
+        await mongoose.connect(process.env.DB_CONNECTION_STRING, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+    
+        console.log('Conexão com o MongoDB estabelecida com sucesso!');
+        return mongoose.connection;
+    } catch (error) {
+        console.error('Erro ao conectar ao MongoDB:', error);
+        throw error;
+    }
 };
 
 export default conectaBanco;
