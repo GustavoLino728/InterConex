@@ -93,7 +93,7 @@ export const InpPrimary = styled.input`
     height: 100%;
     background: transparent;
     
-
+    font-size: 16px;
     border: none;
     padding: 0;
     border-radius: 10px;
@@ -101,7 +101,7 @@ export const InpPrimary = styled.input`
     &::placeholder{
         color: #9FA8D0;
         font-family: 'Poppins';
-        font-size: 12px;
+        font-size: 13px;
     }
 
     &:focus{
@@ -110,7 +110,7 @@ export const InpPrimary = styled.input`
 `
 
 export const ErrorText = styled.p`
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     color: red;
     margin: -5px 0 10px 0;

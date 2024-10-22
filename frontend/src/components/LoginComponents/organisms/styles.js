@@ -124,7 +124,7 @@ export const LFConteudo = styled.div`
     p{
         text-align: center;
         font-weight: 700;
-        font-size: 12px;
+        font-size: 13px;
     }
 `
 
