@@ -1,7 +1,7 @@
 .divGeral{
     display: flex;
-    gap: 30px;
-    padding: 55px;
+    gap: 35px;
+    padding: 60px;
 }
 @media (max-width: 768px) {
     .divGeral {

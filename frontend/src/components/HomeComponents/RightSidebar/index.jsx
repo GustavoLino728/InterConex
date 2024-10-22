@@ -6,7 +6,7 @@ export default function RightSidebar() {
     <div className={styles['right-sidebar']}>
       <h2>Sugestões para você</h2>
       <div className={styles['suggestion-box']}>
-      {[1, 2, 3, 4, 5].map((num) => (
+      {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
         <div key={`suggestion-${num}`} className={styles['suggestion-item']}>
           <img src={userIcon} alt=''/>
           <div className={styles['suggestion-info']}>
