@@ -12,7 +12,7 @@ export default function MainContent() {
       <div className={styles['create-post']}>
         <div className= {styles['img-and-start']}>
         <img src={cesarPerfil} alt="" className={styles['avatar']}/>
-        <input type="text" placeholder="Comece uma publicação"/>
+        <button type="text">Comece uma publicação</button>
         </div>
         <div className={styles['create-post-actions']}>
           <div className={styles['service-button']}>

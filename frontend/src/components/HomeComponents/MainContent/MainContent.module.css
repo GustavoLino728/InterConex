@@ -24,7 +24,7 @@
     flex-direction: column;
   }
   
-  .create-post input {
+  .create-post button {
     padding: 10px;
     border: 2px solid #7133a7;
     border-radius: 15px;
@@ -32,11 +32,11 @@
     text-align: center;
     font-size: 17px;
     font-weight: 500;
+    color:#7133a7;
   }
-
-  .create-post input::placeholder{
-    color: #7133a7; 
-    font-weight: 600;
+  .create-post button:hover{
+    cursor: pointer;
+    background-color: lightgray;  
   }
 /*////////////////////////////////////////////////////////////////////AÇÕES DE CREATE POST//////////////////////////////////////////////////////////////////////////////////////////////////////*/
   .create-post-actions {
@@ -176,3 +176,8 @@
     font-size: 14px;
   }
   
+  @media (max-width: 768px) {
+    .main-content {
+      width: 100%;
+    }
+  }

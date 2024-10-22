@@ -2,5 +2,10 @@
     display: flex;
     margin-top: 25px;
     gap: 30px;
-    padding: 15px;
+    padding: 30px;
 }
+@media (max-width: 768px) {
+    .divGeral {
+      width: 100%;
+    }
+  }
