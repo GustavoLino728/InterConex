@@ -14,10 +14,24 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 
+// eslint-disable-next-line no-useless-escape
+const cnpj_regex = /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/;
+
+const cnpj_validacao = yup.string().required('CNPJ obrigatório')
+.matches(cnpj_regex, 'Formato de CNPJ inválido')
+.test('cnpj_valido', 'CNPJ inválido', function (value){
+    if (!value) return false;
+    const cnpj_limpo = value.replace(/[^\d]+/g, '');
+
+    if (cnpj_limpo.length !== 14) return false;
+
+    return true;
+})
+
 const schema = yup.object().shape({
     nome: yup.string().required('Nome obrigatório'),
         email: yup.string().email('Email inválido').required('Email obrigatório')
-        .test('checarEmail', 'Email já está em uso', async (value) => {
+        .test('checar_email', 'Email já está em uso', async (value) => {
             if (!value) return true;
             try{
                 const response = await api.post('/check-email', { email: value })
@@ -27,7 +41,7 @@ const schema = yup.object().shape({
                 return false;
             }
         }), 
-    cnpj: yup.string().min(18, 'CNPJ inválido').required("CNPJ obrigatório"),
+    cnpj: cnpj_validacao,
     tipo1: yup.string().required("Ao menos um tipo é obrigatório"),
     tipo2: yup.string(),
     senha: yup.string().min(6, 'Senha muito curta, mínimo 6 caracteres').required('Senha obrigatória'),
