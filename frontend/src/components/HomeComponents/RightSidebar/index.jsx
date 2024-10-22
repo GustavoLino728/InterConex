@@ -1,4 +1,5 @@
 import styles from './RightSidebar.module.css'
+import userIcon from '../../../assets/homeImg/icone.usuario.png';
 
 export default function RightSidebar() {
   return (
@@ -6,7 +7,7 @@ export default function RightSidebar() {
       <h2>Sugestões para você</h2>
       {[1, 2, 3, 4, 5].map((num) => (
         <div key={`suggestion-${num}`} className={styles['suggestion-item']}>
-          <img src={`/placeholder.svg?height=40&width=40`} alt=''/>
+          <img src={userIcon} alt=''/>
           <div className={styles['suggestion-info']}>
             <h3>Usuário</h3>
             <p>Descrição do usuário</p>

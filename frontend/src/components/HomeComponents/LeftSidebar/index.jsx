@@ -1,4 +1,5 @@
 import styles from './LeftSidebar.module.css'
+import userIcon from '../../../assets/homeImg/icone.usuario.png';
 
 export default function LeftSidebar() {
   return (
@@ -7,7 +8,7 @@ export default function LeftSidebar() {
         <h2>Ranking de Empresas</h2>
           {[1, 2, 3, 4, 5].map((num) => (
           <div key={`company-${num}`} className={styles['ranking-item']}>
-            <img src={`/placeholder.svg?height=30&width=30`} alt=''/>
+            <img src={userIcon} alt={`Startup ${num}`}/>
             <span>Empresa</span>
             <span className={styles.position}>{num}st</span>
           </div>
@@ -19,7 +20,7 @@ export default function LeftSidebar() {
         <h2>Ranking de Startups</h2>
         {[1, 2, 3, 4, 5].map((num) => (
           <div key={`startup-${num}`} className={styles['ranking-item']}>
-            <img src={`/placeholder.svg?height=30&width=30`} alt='' />
+            <img src={userIcon} alt='' />
             <span>Startup</span>
             <span className={styles.position}>{num}st</span>
           </div>

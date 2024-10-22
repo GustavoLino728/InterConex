@@ -1,25 +1,30 @@
 import styles from './MainContent.module.css'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhotoFilm } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import cesarPerfil from '../../../assets/homeImg/marca_cesar_school.png';
+import differentUser from '../../../assets/homeImg/usuario_publicacao.png';
 
 export default function MainContent() {
   return (
     <div className={styles['main-content']}>
       <div className={styles['create-post']}>
         <div className= {styles['img-and-start']}>
-        <img src="/placeholder.svg?height=40&width=40" alt="" className={styles['avatar']}/>
+        <img src={cesarPerfil} alt="" className={styles['avatar']}/>
         <input type="text" placeholder="Comece uma publicação"/>
         </div>
         <div className={styles['create-post-actions']}>
           <div className={styles['service-button']}>
-          <img src="/placeholder.svg?height=40&width=40" alt="" className={styles['avatar']} />
+          <FontAwesomeIcon icon={faBriefcase} alt="" className={styles['icons_fa']}/>
           <p className={styles['inner-text']}>Serviço</p>
           </div>
           <div className={styles['media-button']}>
-          <img src="/placeholder.svg?height=40&width=40" alt="" className={styles['avatar']} />
+          <FontAwesomeIcon icon={faPhotoFilm} alt="" className={styles['icons_fa']}/>
           <p className={styles['inner-text']}>Mídia</p>
           </div>
           <div className={styles['job-button']}>
-          <img src="/placeholder.svg?height=40&width=40" alt="" className={styles['avatar']}/>
+          <FontAwesomeIcon icon={faBuilding} alt="" className={styles['icons_fa']}/>
           <p className={styles['inner-text']}>Vaga</p>
           </div>
         </div>
@@ -27,7 +32,7 @@ export default function MainContent() {
 
       <div className={styles['post']}>
         <div className={styles['post-header']}>
-          <img src="/placeholder.svg?height=40&width=40" alt="User Avatar" className={styles['avatar']} />
+          <img src= {differentUser} alt="User Avatar" className={styles['avatar']} />
           <div className={styles['user-info']}>
             <h3>Usuário</h3>
             <p>Descrição do usuário | 1h</p>
