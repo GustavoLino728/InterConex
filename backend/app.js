@@ -1,10 +1,13 @@
 // index.js
+import "dotenv/config";
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import conectaBanco from './src/config/dbconnect.js';
 import usuarios from './src/models/usuarios.js';
 import empresas from './src/models/empresas.js';
+import cors from 'cors';
+import routes from "./src/routes/index.js";
 
 // Obter o diretório atual
 const __filename = fileURLToPath(import.meta.url);
@@ -12,16 +15,18 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 3000;
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET,POST,PUT,DELETE'],
+  credentials: true
+}))
+
+routes(app);
+
+app.use(express.json());
 
 // Middleware para servir arquivos estáticos da pasta frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
-
-// Rota GET para testar
-app.get('/api/posts/:id', async (req, res) => {
-  const { id } = req.params;
-  // Aqui você pode implementar lógica para consumir APIs com Axios
-  res.json({ message: `Post ID: ${id}` });
-});
 
 // Iniciar o servidor
 app.listen(PORT, async () => {

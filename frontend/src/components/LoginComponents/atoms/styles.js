@@ -6,6 +6,14 @@ export const Wrapper = styled.div`
     align-items: flex-start;
 `
 
+export const Row = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`
+
 export const BtnPrimary = styled.button`
     width: 100%;
     max-width: 100%;
@@ -64,6 +72,56 @@ export const BtnSecondary = styled.button`
     }
 `
 
+export const SelectContainer = styled.div`
+    width: 100%;
+    max-width: 100%;
+    height: 5vh;
+    background: #FFF;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    margin-bottom: 2vh;
+    border-radius: 10px;
+
+    filter: drop-shadow(0 2px 1px #333);
+    transition: 0.1s ease-in-out;
+
+    &:hover{
+        outline: #9FA8D0 solid 2px;
+    }
+`
+
+export const SelectInput = styled.select`
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-family: 'Poppins';
+    margin: 0 20px 0 0;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    font-size: 15px;
+    border: none;
+    padding: 0;
+    border-radius: 10px;
+
+    cursor: pointer;
+    
+    &:focus{
+        outline: 0;
+    }
+`
+
+export const Options = styled.option`
+    color: #9FA8D0;
+    font-family: 'Poppins';
+    font-size: 15px;
+`
+
 export const InputContainer = styled.div`
     width: 100%;
     height: 5vh;
@@ -82,11 +140,6 @@ export const InputContainer = styled.div`
     }
 `
 
-
-export const IconContainer = styled.div`
-    padding: 0 10px;
-`
-
 export const InpPrimary = styled.input`
     width: 100%;
     max-width: 95%;
@@ -94,6 +147,7 @@ export const InpPrimary = styled.input`
     background: transparent;
     
     font-size: 16px;
+    font-family: 'Poppins';
     border: none;
     padding: 0;
     border-radius: 10px;
@@ -109,9 +163,13 @@ export const InpPrimary = styled.input`
     }
 `
 
+export const IconContainer = styled.div`
+    padding: 0 10px;
+`
+
 export const ErrorText = styled.p`
     font-size: 13px;
     font-weight: 700;
     color: red;
     margin: -5px 0 10px 0;
-`
+    `

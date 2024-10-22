@@ -9,6 +9,7 @@ export const InputPrimary = ({ leftIcon, rightIcon, name, control, errorMessage,
           {leftIcon ? (<IconContainer>{leftIcon}</IconContainer>) : null}
           <Controller
             name={name}
+            defaultValue=""
             control={control}
             render={({ field }) => <InpPrimary id={name} {...field} {...rest} />}
           />

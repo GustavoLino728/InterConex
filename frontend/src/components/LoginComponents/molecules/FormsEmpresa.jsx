@@ -1,37 +1,58 @@
 import { useState } from "react";
 import { ButtonPrimary } from "../atoms/Button";
 import { InputPrimary } from "../atoms/Input";
+import { SelectAtoms } from "../atoms/Select";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faEye, faEyeSlash, faBuilding, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faEye, faEyeSlash, faBuilding, faEnvelope, faLock, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 import styles from './molecules.module.css';
 import { api } from "../../../services/api";
 
+import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 
 const schema = yup.object().shape({
     nome: yup.string().required('Nome obrigatório'),
-    email: yup.string().email('Email inválido').required('Email obrigatório')
-    .test('checarEmail', 'Email já está em uso', async (value) => {
-        if (!value) return true;
-        try{
-            const response = await api.post('/check-email', { email: value })
-            return !response.data.exists;
-        } catch (error) {
-            console.error("Erro ao verificar o email: ", error);
-            return false;
-        }
-    }), 
+        email: yup.string().email('Email inválido').required('Email obrigatório')
+        .test('checarEmail', 'Email já está em uso', async (value) => {
+            if (!value) return true;
+            try{
+                const response = await api.post('/check-email', { email: value })
+                return !response.data.exists;
+            } catch (error) {
+                console.error("Erro ao verificar o email: ", error);
+                return false;
+            }
+        }), 
     cnpj: yup.string().min(18, 'CNPJ inválido').required("CNPJ obrigatório"),
+    tipo1: yup.string().required("Ao menos um tipo é obrigatório"),
+    tipo2: yup.string(),
     senha: yup.string().min(6, 'Senha muito curta, mínimo 6 caracteres').required('Senha obrigatória'),
 })
 
 const FormsEmpresa = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [enviando, setEnviando] = useState(false);
+
+    const navigateLogin = useNavigate();
+
+    const optionsSelect = [
+        { value: 'tecnologia', label: 'Tecnologia' },
+        { value: 'saude', label: 'Saúde' },
+        { value: 'inovacao', label: 'Inovação' },
+        { value: 'projetos', label: 'Projetos' },
+        { value: 'marketing', label: 'Marketing' },
+        { value: 'negocios', label: 'Negócios' },
+        { value: 'gestao', label: 'Gestão' },
+        { value: 'esg', label: 'ESG' },
+        { value: 'remoto', label: 'Remoto' },
+        { value: 'presencial', label: 'Presencial' },
+        { value: 'hibrido', label: 'Híbrido' },
+        { value: 'outros', label: 'Outros' },
+    ]    
 
   const { control, handleSubmit, reset, formState: { errors, isValid } } = useForm({
     resolver: yupResolver(schema),
@@ -41,17 +62,22 @@ const FormsEmpresa = () => {
     const onSubmit = async (data) => {
         setEnviando(true);
         try{
-            await api.post('/empresas', {
+            await api.post('/registro-empresa', {
                 name: data.nome,
                 email: data.email,
                 cnpj: data.cnpj,
+                tipo1: data.tipo1,
+                tipo2: data.tipo2,
                 password: data.senha,
-        });
-
-        reset();
+            });
+            alert("Cadastrado com sucesso!");
+            reset();
+            navigateLogin('/login');
+            
         } catch (error){
-            setEnviando(false);
             console.error('Erro ao enviar dados: ', error)
+        } finally {
+            setEnviando(false);
         }
     }
 
@@ -89,6 +115,15 @@ const FormsEmpresa = () => {
             type="text"
             placeholder="CNPJ (00.000.000/0000-00)"
             spellCheck="false"
+        />
+
+        <SelectAtoms
+            leftIcon={<FontAwesomeIcon icon={faBriefcase} className={styles.iconeInput}/>}
+            nameLeft="tipo1"
+            nameRight="tipo2"
+            control={control}
+            errorMessage={errors?.tipo1?.message}
+            options={optionsSelect}
         />
 
         <InputPrimary

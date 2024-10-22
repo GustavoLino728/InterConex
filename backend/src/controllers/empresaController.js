@@ -23,8 +23,10 @@ class empresasController {
     static async checkMail (req,res){
         const { email } = req.body;
 
-        const userExists = await usuarios.findOne({ email });
-        const companyExists = await empresas.findOne({ email });
+        const [userExists, companyExists] = await Promise.all([
+            usuarios.findOne({ email }),
+            empresas.findOne({ email })
+        ]);
       
         if (userExists || companyExists) {
             return res.status(200).json({ exists: true });
