@@ -13,7 +13,7 @@ function Filtro() {
     "Empresas",
     "Vagas",
     "Freelancers",
-    "Mais Filtros",
+    "Todos os Filtros",
   ];
 
   useEffect(() => {

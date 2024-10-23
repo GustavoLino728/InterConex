@@ -1,7 +1,7 @@
 import styles from './LeftSidebar.module.css'
 import userIcon from '../../../assets/homeImg/icone.usuario.png';
 
-export default function LeftSidebar() {
+export default function wLeftSidebar() {
   return (
     <div className={styles['left-sidebar']}>
       <div className={styles.ranking}>

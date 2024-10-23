@@ -4,19 +4,8 @@ footer {
     background-color: #4b2768;
     color: white;
     padding: 20px;
-    align-items:flex-start;
-    padding: 1.5rem 2.3rem;
   }
   
   .footer-section p {
     margin: 5px 0;
-  }
-
-  .logo {
-    height: 10rem;
-    border-radius: 100px;
-  }
-
-  .icons {
-    font-size: 2rem;
   }
