@@ -4,17 +4,25 @@ import Login from './pages/Login';
 import Pesquisa from './pages/Pesquisa';
 import RegistroEmpresas from './pages/RegistroEmpresas';
 
-import Header from './components/Header/index.jsx'
-import Footer from './components/Footer/index.jsx'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import NavSide from './components/NavSide'
 import { useLocation } from 'react-router-dom';
 
 import {
   Routes,
   Route,
 } from 'react-router-dom'
+import { useState } from 'react';
 
 const App = () => {
   const location = useLocation();
+  const [showNav, setShowNav] = useState(false);
+
+  const handleShowNav = () => {
+    setShowNav(!showNav);
+  }
+
 
   return (
     <>
@@ -22,7 +30,14 @@ const App = () => {
         location.pathname !== '/login' &&
         location.pathname !== '/registro' &&
         location.pathname !== '/registro-empresa' && (
-          <Header/>
+          <NavSide isOpen={showNav} handleCloseNav={handleShowNav}/>
+      )}
+
+      { location.pathname !== '/' &&
+        location.pathname !== '/login' &&
+        location.pathname !== '/registro' &&
+        location.pathname !== '/registro-empresa' && (
+          <Header handleShowNav={handleShowNav}/>
       )}
       
       <Routes>
