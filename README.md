@@ -1,7 +1,7 @@
 # 📒 Documentação do Projeto
 ---
 
-Através da disciplina "Fundamentos de Desenvolvimento de Softwares", do 2º período de Análise e Desenvolvimento de Sistemas na CESAR School, desenvolvemos uma aplicação web, implementando React, NodeJS e os princípios de CRUD com banco de dados.
+Através da disciplina "Fundamentos de Desenvolvimento de Softwares", do 2º período de Análise e Desenvolvimento de Sistemas na CESAR School, desenvolvemos uma aplicação web, implementando React, NodeJS e os princípios de CRUD com banco de dados, através do MongoDB.
 
 Neste sentido, criamos o InterConex, uma rede social que visa conectar empresas e startups com pessoas que desejam prestar seus serviços, como freelancers. O InterConex proporciona também áreas como investimento nas startups, criação das mesmas e divulgação de serviços que são visualizados pelas empresas que os necessitam!
 
@@ -24,6 +24,15 @@ Neste sentido, criamos o InterConex, uma rede social que visa conectar empresas 
 <br>
 
 <div style="display: inline_block">
+  <img align="center" alt="Figma" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg">
+  <img align="center" alt="Trello" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/trello/trello-original.svg">
+  <img align="center" alt="Git" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg">
+  <img align="center" alt="GitHub" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg">
+</div>
+
+<br>
+
+<div style="display: inline_block">
   <img align="center" alt="ViteJS" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg">
   <img align="center" alt="Motion" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg">
   <img align="center" alt="Express" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg">
@@ -33,10 +42,8 @@ Neste sentido, criamos o InterConex, uma rede social que visa conectar empresas 
 <br>
 
 <div style="display: inline_block">
-  <img align="center" alt="Figma" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg">
-  <img align="center" alt="Trello" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/trello/trello-original.svg">
-  <img align="center" alt="Git" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg">
-  <img align="center" alt="GitHub" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg">
+  <img align="center" alt="MongoDB" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg">
+  <img align="center" alt="Mongoose" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original.svg">
 </div>
 
 <br>
@@ -99,7 +106,9 @@ Feito com ❤️ por:
 
 <h1>📢 Andamento do Trello</h1>
 
-![image](https://github.com/user-attachments/assets/2d5bb8c7-2c54-4909-9b1d-96ce7304112d)
+
+![image](https://github.com/user-attachments/assets/793e5c60-ec6f-4d9f-b305-e13e018456f6)
+
 
 <br>
 
