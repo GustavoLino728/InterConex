@@ -4,8 +4,11 @@ import { faBars, faBoxArchive, faUser } from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import Filtro from '../PesquisaComponets/Filtro'
+import { useLocation } from 'react-router-dom'
 
 const Header = () => {
+
+  const location = useLocation();
 
   const [searchTerm, setSearchTerm] = useState('');
   const [showFilters, setShowFilters] = useState(false);
@@ -39,6 +42,7 @@ const Header = () => {
         <img src= {LogoImage} alt="Logo do app" className={styles.logo}/>
       </div>
 
+      {location.pathname === '/pesquisa' && (
         <div className={styles.headerPosition}>
             <input 
             className={styles.pesquisa} 
@@ -50,7 +54,7 @@ const Header = () => {
             onBlur={searchBlur}
             />
         </div>
-
+      )}
 
       <div className={styles.headerPosition}> 
         <FontAwesomeIcon icon={faBoxArchive} className={styles.iconButton}/>
