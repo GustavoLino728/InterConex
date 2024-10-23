@@ -42,7 +42,7 @@ export const FormsLogin = () => {
 
       if (data){
         setUser(data);
-        navigateFeed('/');
+        navigateFeed('/feed');
       } else {
         alert('Email ou senha inválido');
         setEnviando(false);
