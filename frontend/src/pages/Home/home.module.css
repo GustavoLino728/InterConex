@@ -1,0 +1,21 @@
+.link{
+    text-decoration: none;
+    color: #280F3E;
+    font-weight: 700;
+
+    width: 8vw;
+    height: 4vh;
+    background-color: #F5F5DC;  
+    border-radius: 25px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s ease-in-out;
+
+    &:hover{
+        background: #BA68C8;
+        color: #fff;
+    }
+}
