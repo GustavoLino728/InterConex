@@ -34,7 +34,7 @@ class usuariosController {
                 nome,
                 sobrenome,
                 email,
-                senha,  // Armazena a senha em texto puro 
+                senha,
             });
 
             // Salva o usuário no banco de dados

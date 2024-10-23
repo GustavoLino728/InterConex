@@ -3,8 +3,6 @@ import empresasController from "../controllers/empresaController.js";
 
 const routes = express.Router();
 
-// Rota POST para verificar o email
-routes.post("/check-email",empresasController.checkMail);
 // Rota GET para fazer o login
 routes.post("/login",empresasController.requisicaoLogin);
 //Rota POST para cadastro de empresa

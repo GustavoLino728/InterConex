@@ -19,22 +19,6 @@ class empresasController {
         }
     }
 
-    //Requisição de verificar o email
-    static async checkMail (req,res){
-        const { email } = req.body;
-
-        const [userExists, companyExists] = await Promise.all([
-            usuarios.findOne({ email }),
-            empresas.findOne({ email })
-        ]);
-      
-        if (userExists || companyExists) {
-            return res.status(200).json({ exists: true });
-        }
-      
-        return res.status(200).json({ exists: false });
-    }
-
     // Requisição de registro de empresa
     static async requisicaoRegistro(req, res) {
         try {
@@ -54,12 +38,12 @@ class empresasController {
 
             // Cria e salva a nova empresa
             const novaEmpresa = new empresas({
-                nome_empresa: nome_empresa,
+                nome_empresa,
                 email,
-                senha: senha,  // Armazenando a senha em texto puro
+                senha,  // Armazenando a senha em texto puro
                 cnpj,
-                tipo1: tipo1,
-                tipo2: tipo2,
+                tipo1,
+                tipo2,
             });
 
             await novaEmpresa.save();
@@ -91,7 +75,7 @@ class empresasController {
             console.error(error);
             return res.status(500).json({ message: 'Erro interno do servidor.' });
         }
-        }
+    }
 };
 
 export default empresasController;
