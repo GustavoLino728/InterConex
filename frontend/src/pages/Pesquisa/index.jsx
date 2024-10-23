@@ -3,9 +3,7 @@ import Historico from '../../components/PesquisaComponets/Historico';
 const Pesquisa = () => {
 
   return (<>
-    {/* <Filtro /> */}
     <Historico />
-
   </>);
 }
 

@@ -1,8 +1,64 @@
-.historicoContainer {
+/* .historicoContainer {
     display: flex;
     background-color: white;
     margin: 10px;
     border-radius: 10px;
     justify-content: space-around;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+} */
+.historicoContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    background-color: white;
+  }
+  
+  .historicoTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .historicoItems {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  
+  .historicoItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+  }
+  
+  .historicoIcon {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0; /* Placeholder para o ícone/imagem */
+    border-radius: 50%;
+    margin-bottom: 5px;
+  }
+  
+  .historicoNome {
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+  }
+  
+  .verTudo {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 14px;
+  }
+  
+  .verTudo a {
+    color: #6c63ff;
+    text-decoration: none;
+  }
+  
+  .verTudo a:hover {
+    text-decoration: underline;
+  }
+  
