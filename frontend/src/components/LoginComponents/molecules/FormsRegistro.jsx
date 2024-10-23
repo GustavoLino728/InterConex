@@ -6,6 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import styles from './molecules.module.css'
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { api } from '../../../services/api'
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -37,16 +38,22 @@ export const FormsRegistro = () => {
     mode: 'onChange'
   })
 
+  const navigate = useNavigate();
+
   const onSubmit = async (data) => {
     setEnviando(true);
     try{
-      await api.post('/usuarios', {
-        name: data.nome,
+      await api.post('/registro-usuario', {
+        nome: data.nome,
+        sobrenome: data.sobrenome,
         email: data.email,
-        password: data.senha,
+        senha: data.senha,
       });
 
       reset();
+      alert('Cadastrado com sucesso!');
+      navigate('/login');
+
     } catch (error){
       console.error('Erro ao enviar dados: ', error)
     } finally {
@@ -66,7 +73,17 @@ export const FormsRegistro = () => {
            control={control}
            errorMessage={errors?.nome?.message}
            type="text"
-           placeholder="Insira seu nome completo"
+           placeholder="Insira seu nome"
+           spellCheck="false"
+        />
+
+        <InputPrimary 
+           leftIcon={<FontAwesomeIcon icon={faUser} className={styles.iconeInput}/>}
+           name="sobrenome"
+           control={control}
+           errorMessage={errors?.nome?.message}
+           type="text"
+           placeholder="Insira seu sobrenome"
            spellCheck="false"
         />
 

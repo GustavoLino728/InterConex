@@ -5,10 +5,10 @@ class empresasController {
 
     //Requisição de login da empresa
     static async requisicaoLogin (req,res){
-        const { email, senha } = req.query;
+        const { email, senha } = req.body;
 
-        const user = await usuarios.findOne({ email, password: senha });
-        const company = await empresas.findOne({ email, password: senha });
+        const user = await usuarios.findOne({ email, senha: senha });
+        const company = await empresas.findOne({ email, senha: senha });
       
         if (user) {
             return res.status(200).json(user);
@@ -38,7 +38,7 @@ class empresasController {
     // Requisição de registro de empresa
     static async requisicaoRegistro(req, res) {
         try {
-            const { nomeEmpresa, email, senha, cnpj, tipo1, tipo2 } = req.body;
+            const { nome_empresa, email, cnpj, tipo1, tipo2, senha } = req.body;
 
             // Verifica se o email ou CNPJ já está em uso por outra empresa ou usuário
             const emailExistente = await empresas.findOne({ email });
@@ -54,7 +54,7 @@ class empresasController {
 
             // Cria e salva a nova empresa
             const novaEmpresa = new empresas({
-                nome: nomeEmpresa,
+                nome_empresa: nome_empresa,
                 email,
                 senha: senha,  // Armazenando a senha em texto puro
                 cnpj,

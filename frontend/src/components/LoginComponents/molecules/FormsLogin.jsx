@@ -35,10 +35,13 @@ export const FormsLogin = () => {
   const onSubmit = async formData => {
     setEnviando(true);
     try{
-      const { data } = await api.get(`/login?email=${formData.email}&password=${formData.senha}`);
+      const { data } = await api.post('/login', {
+        email: formData.email,
+        senha: formData.senha
+      });
 
-      if(data.length === 1){
-        setUser(data[0]);
+      if (data){
+        setUser(data);
         navigateFeed('/');
       } else {
         alert('Email ou senha inválido');

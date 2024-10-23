@@ -51,7 +51,7 @@ const FormsEmpresa = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [enviando, setEnviando] = useState(false);
 
-    const navigateLogin = useNavigate();
+    const navigate = useNavigate();
 
     const optionsSelect = [
         { value: 'tecnologia', label: 'Tecnologia' },
@@ -77,16 +77,16 @@ const FormsEmpresa = () => {
         setEnviando(true);
         try{
             await api.post('/registro-empresa', {
-                name: data.nome,
+                nome_empresa: data.nome,
                 email: data.email,
                 cnpj: data.cnpj,
                 tipo1: data.tipo1,
                 tipo2: data.tipo2,
-                password: data.senha,
+                senha: data.senha,
             });
             alert("Cadastrado com sucesso!");
             reset();
-            navigateLogin('/login');
+            navigate('/login');
             
         } catch (error){
             console.error('Erro ao enviar dados: ', error)

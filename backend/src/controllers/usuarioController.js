@@ -2,30 +2,6 @@ import usuarios from "../models/usuarios.js";
 import empresas from "../models/empresas.js";
 
 class usuariosController {
-
-    //Requisição de login do usuário
-    static async requisicaoLogin (req, res) {
-    try {
-        // Recebendo email e senha via corpo da requisição (POST)
-        const { email, senha } = req.body;
-
-        // Verificando se o usuário existe no banco
-        const user = await usuarios.findOne({ email, senha });
-
-        if (user) {
-            //Retorna os dados da conta
-            return res.status(200).json(user);
-        } else {
-            //Se os dados forem errados retorna isso
-            return res.status(401).json({ message: 'Email ou senha inválidos.' });
-        }
-    } catch (error) {
-        console.error("Erro no login:", error);
-        return res.status(500).json({ message: 'Erro interno no servidor.' });
-    }
-    }
-
-
     //Requisição de verificar o email
     static async checkMail (req,res){
         const { email } = req.body;
@@ -56,9 +32,9 @@ class usuariosController {
             // Cria o novo usuário
             const novoUsuario = new usuarios({
                 nome,
-                sobrenome: sobrenome,
+                sobrenome,
                 email,
-                senha: senha,  // Armazena a senha em texto puro 
+                senha,  // Armazena a senha em texto puro 
             });
 
             // Salva o usuário no banco de dados

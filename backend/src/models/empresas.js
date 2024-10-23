@@ -5,9 +5,9 @@ const empresasSchema = new mongoose.Schema({
     nome_empresa: { type: String, require: true},
     cnpj: { type: String, require: true },
     email: { type: String, require: true },
-    senha: { type: String, require: true },
     tipo1: { type: String, require: true },
     tipo2: { type: String },
+    senha: { type: String, require: true },
 }, {versionKey: false});
 
 const empresas = mongoose.model("empresas", empresasSchema); 

@@ -1,4 +1,4 @@
-import Home from './pages/Home';
+import Feed from './pages/Feed';
 import Login from './pages/Login';
 import Pesquisa from './pages/Pesquisa';
 import RegistroEmpresas from './pages/RegistroEmpresas';
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
+        <Route path="/feed" element={<Feed/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/registro" element={<Login/>}></Route>
         <Route path="/pesquisa" element={<Pesquisa/>}></Route>
