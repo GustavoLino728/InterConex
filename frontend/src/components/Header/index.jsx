@@ -2,10 +2,36 @@ import styles from './Header.module.css'
 import LogoImage from '../../assets/logoInterConex.jpg'
 import { faBars, faBoxArchive, faUser } from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
+import Filtro from '../PesquisaComponets/Filtro'
 
-function Header() {
+const Header = () => {
 
-  return (    
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showFilters, setShowFilters] = useState(false);
+
+  const searchFocus = () => {
+    setShowFilters(true);
+  };
+
+  const searchBlur = () => {
+    if (searchTerm === '') {
+      setShowFilters(false);
+    }
+  };
+
+  const searchChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+
+    if (value.length === 0) {
+      setShowFilters(false);
+    }
+  };
+
+
+  return (
+      <>    
       <header className={styles.headerContainer}>
 
       <div className={styles.headerPosition}>
@@ -17,7 +43,12 @@ function Header() {
             <input 
             className={styles.pesquisa} 
             placeholder="Pesquisar..." 
-            type="text" />
+            type="text" 
+            value={searchTerm}
+            onChange={searchChange}
+            onFocus={searchFocus}
+            onBlur={searchBlur}
+            />
         </div>
 
 
@@ -27,6 +58,10 @@ function Header() {
       </div>
     </header>
 
+    {showFilters && (
+      <Filtro />
+    )}
+    </>
   )
 }
 
