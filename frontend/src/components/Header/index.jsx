@@ -2,10 +2,8 @@ import styles from './Header.module.css'
 import LogoImage from '../../assets/logoInterConex.jpg'
 import { faBars, faBoxArchive, faUser } from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { useLocation } from 'react-router-dom'
 
 function Header() {
-  const location = useLocation();
 
   return (    
       <header className={styles.headerContainer}>
@@ -15,20 +13,20 @@ function Header() {
         <img src= {LogoImage} alt="Logo do app" className={styles.logo}/>
       </div>
 
-      {location.pathname === '/pesquisa' && (
         <div className={styles.headerPosition}>
-          <form action="">
-            <input className={styles.pesquisa} placeholder='Pesquise aqui...' type="text" />
-            
-          </form>
+            <input 
+            className={styles.pesquisa} 
+            placeholder="Pesquisar..." 
+            type="text" />
         </div>
-      )}
+
 
       <div className={styles.headerPosition}> 
         <FontAwesomeIcon icon={faBoxArchive} className={styles.iconButton}/>
         <FontAwesomeIcon icon={faUser} className={styles.iconButton} />
       </div>
     </header>
+
   )
 }
 

@@ -1,4 +1,4 @@
-.filtroContainer {
+/* .filtroContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7,8 +7,21 @@
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   gap: 80px;
+  width: 100%;
+  margin-top: 0;
+} */
+.filtroContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Centraliza os itens no container */
+  background-color: white;
+  padding: 10px; /* Adiciona um padding para evitar que o conteúdo encoste nas bordas */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 20px; /* Reduzi o gap para melhorar a visualização entre os botões */
+  width: 100%;
+  margin-top: 10px; /* Um pequeno espaçamento para separação do header */
 }
-
 .botao {
   background-color: #532567;
   border-radius: 30px;

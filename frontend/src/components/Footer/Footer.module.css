@@ -1,0 +1,11 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4b2768;
+    color: white;
+    padding: 20px;
+  }
+  
+  .footer-section p {
+    margin: 5px 0;
+  }
