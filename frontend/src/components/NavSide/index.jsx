@@ -12,13 +12,62 @@ import {
     faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+
+const containerVariants = {
+    initial: {
+        opacity: 0,
+        width: 0
+    },
+
+    animate: {
+        opacity: 1,
+        width: '18vw',
+        
+        transition: {
+            type: "spring",
+            damping: 15,
+            stiffness: 150,
+            duration: 1,
+            ease: "easeInOut"
+        }
+    },
+
+    exit: {
+        opacity: 0,
+        width: 0,
+        
+        transition: {
+            type: "spring",
+            damping: 15,
+            stiffness: 150,
+            duration: 1,
+            ease: "easeInOut"
+        }
+    }
+}
 
 // eslint-disable-next-line react/prop-types
 const NavSide = ({ isOpen, handleCloseNav }) => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        if (!isOpen) {
+            setIsAnimating(true);
+        }
+    }, [isOpen]);
+
+    const handleAnimationComplete = () => {
+        if (!isOpen) {
+            setIsAnimating(false);
+        }
+    };
     
     const isActive = (path) => location.pathname === path;
+
 
     const navegar = (path) => {
         handleCloseNav();
@@ -26,7 +75,17 @@ const NavSide = ({ isOpen, handleCloseNav }) => {
     }
 
   return (
-    <div className={`${isOpen ? styles.container : styles.hidden}`}>
+    <motion.div className={styles.container}
+        variants={containerVariants}
+        style={{ 
+            pointerEvents: isOpen ? "auto" : "none", 
+            display: isAnimating || isOpen ? 'block' : 'none' 
+        }}
+        initial={false}
+        animate={isOpen ? "animate" : "initial"}
+        exit="exit"
+        onAnimationComplete={handleAnimationComplete}
+    >
         <div className={styles.navTop}>
             <img src={LogoInterConex} alt="Logo InterConex" />
             <FontAwesomeIcon icon={faRectangleXmark} className={styles.icon} onClick={handleCloseNav}/>
@@ -68,7 +127,7 @@ const NavSide = ({ isOpen, handleCloseNav }) => {
                 Perfil
             </button>
         </nav>
-    </div>
+    </motion.div>
   )
 }
 

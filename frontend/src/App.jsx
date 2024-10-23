@@ -13,7 +13,10 @@ import {
   Routes,
   Route,
 } from 'react-router-dom'
+
 import { useState } from 'react';
+
+import { AnimatePresence } from 'framer-motion';
 
 const App = () => {
   const location = useLocation();
@@ -26,12 +29,16 @@ const App = () => {
 
   return (
     <>
-      { location.pathname !== '/' &&
-        location.pathname !== '/login' &&
-        location.pathname !== '/registro' &&
-        location.pathname !== '/registro-empresa' && (
-          <NavSide isOpen={showNav} handleCloseNav={handleShowNav}/>
-      )}
+        { location.pathname !== '/' &&
+          location.pathname !== '/login' &&
+          location.pathname !== '/registro' &&
+          location.pathname !== '/registro-empresa' && (
+          <AnimatePresence>
+            {showNav && (
+              <NavSide isOpen={showNav} handleCloseNav={handleShowNav}/>
+            )}
+          </AnimatePresence>
+          )}
 
       { location.pathname !== '/' &&
         location.pathname !== '/login' &&
