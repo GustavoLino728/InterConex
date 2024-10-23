@@ -9,5 +9,7 @@ routes.post("/login",empresasController.requisicaoLogin);
 routes.post("/registro-empresa",empresasController.requisicaoRegistro);
 //Rota DELETE para remover a empresa
 routes.delete("/remove-empresa",empresasController.requisicaoDeletar);
+//Rota POST para pesquisar o usuário ou empresa
+routes.post("/search",empresasController.requisicaoBuscar);
 
 export default routes;

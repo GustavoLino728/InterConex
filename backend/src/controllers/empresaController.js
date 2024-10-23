@@ -76,6 +76,36 @@ class empresasController {
             return res.status(500).json({ message: 'Erro interno do servidor.' });
         }
     }
+
+    // Requisição para buscar usuario ou empresa 
+    static async requisicaoBuscar(req, res) {
+        try {
+            const { nome } = req.query;
+    
+            if (!nome) {
+                return res.status(400).json({ message: 'Nome é obrigatório.' });
+            }
+            
+            // Buscar empresas com base no nome
+            const usuarios = await empresas.find({
+                nome: { $regex: nome, $options: 'i' } // Busca case-insensitive
+            });
+
+            //Busca usuarios com base no nome
+            const empresas = await usuarios.find({
+                nome: { $regex: nome, $options: 'i' }
+            })
+    
+            if (usuarios.length === 0 && empresas.length === 0) {
+                return res.status(404).json({ message: 'Nenhum usuário ou empresa encontrada com esse nome.' });
+            }
+    
+            return res.status(200).json({usuarios, empresas});
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ message: 'Erro interno do servidor.' });
+        }
+    }    
 };
 
 export default empresasController;
