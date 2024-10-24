@@ -42,7 +42,7 @@ const Header = ({ handleShowNav }) => {
         <div className={styles.headerPosition}>
             <input 
             className={styles.pesquisa} 
-            placeholder="Pesquisar..." 
+            placeholder='Pesquisar...'
             type="text" 
             value={searchTerm}
             onChange={searchChange}

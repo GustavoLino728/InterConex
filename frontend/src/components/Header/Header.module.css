@@ -23,12 +23,19 @@
     color: #532567;
     border: 1px solid #532567;
     border-radius: 8px;
+    transition: 0.2s ease-in-out;
+
+    &:hover{
+        /* color: #FFF; */
+        transform: scale(1.20);
+    }
 }
   
 .pesquisa {
     border: 2px solid #532567;
     border-radius: 15px;
     padding: 10px 200px 10px 15px;
+    font-family: "Poppins", sans-serif;
 }
 
 .logo {

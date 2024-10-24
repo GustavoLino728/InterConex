@@ -20,6 +20,13 @@
   font-size: 15px;
   cursor: pointer;
   white-space: nowrap;
+  transition: 0.2s ease-in-out;
+
+  &:hover{
+      color: #FFF;
+      transform: scale(1.2);
+      font-weight: bold;
+  }
 }
 
 @media (min-width: 320px) {
