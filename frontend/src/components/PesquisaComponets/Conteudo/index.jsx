@@ -1,6 +1,15 @@
+import ImagemTeste from '../../../assets/questions.png';
+import styles from './conteudo.module.css';
+
 const Conteudo = () => {
     return (
-        <div></div>
+        <div className={styles.body}>    
+            <div className={styles.containerConteudo}>
+                <img src={ImagemTeste} 
+                alt="Question Mark" 
+                className={styles.content}/>
+            </div>
+        </div>
     )
 }
 
