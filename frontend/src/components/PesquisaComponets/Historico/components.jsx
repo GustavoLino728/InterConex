@@ -1,5 +1,5 @@
 
-function Components() {
+const Components = () => {
     return (
         <div>
             <img src="" alt="" />

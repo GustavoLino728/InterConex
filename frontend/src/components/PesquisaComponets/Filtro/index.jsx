@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { useEffect, useState } from "react";
 
-function Filtro() {
+const Filtro = () => {
   const [isMobile, setIsMobile] = useState(false);
   const botoes = [
     "Pessoas",
