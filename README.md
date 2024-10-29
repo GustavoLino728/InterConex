@@ -106,9 +106,41 @@ Feito com ❤️ por:
 
 <h1>📢 Andamento do Trello</h1>
 
-
 ![image](https://github.com/user-attachments/assets/793e5c60-ec6f-4d9f-b305-e13e018456f6)
 
+<br>
+
+<h1>📢 Diagrama de Atividades</h1>
+
+```mermaid
+flowchart LR
+    start([Início]) --> decision{Registrar?}
+    
+    decision -- Não --> Login
+    decision -- Sim --> Registro
+    
+    Registro --> |Salva dados| BancoDeDados[(Banco de Dados)]
+    Login --> BancoDeDados
+    
+    BancoDeDados --> check{Login válido?}
+    
+    check -- Sim --> PaginaPrincipal[Pagina Principal]
+    
+    PaginaPrincipal --> Visualizacao[Visualização de Publicações]
+    PaginaPrincipal --> NavBar
+    
+    NavBar --> TelaPesquisa[Tela de Pesquisa]
+    
+    TelaPesquisa --> Pesquisar
+    TelaPesquisa --> Filtros
+    TelaPesquisa --> Historico[Histórico]
+    
+    style BancoDeDados fill:#4169E1,stroke:#000,stroke-width:2px
+    style Registro fill:#FAF3DD,stroke:#000,stroke-width:1px,color:#000
+    style Login fill:#FAF3DD,stroke:#000,stroke-width:1px,color:#000
+    style PaginaPrincipal fill:#FAF3DD,stroke:#000,stroke-width:1px,color:#000
+    style Visualizacao fill:#FAF3DD,stroke:#000,stroke-width:1px,color:#000
+```
 
 <br>
 
