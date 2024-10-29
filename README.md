@@ -12,8 +12,8 @@ Neste sentido, criamos o InterConex, uma rede social que visa conectar empresas 
   <h3>InterConex</h3>
 </div>
 
-### Tecnologias Utilizadas:
----
+## 💾 Tecnologias Utilizadas:
+
 <div style="display: inline_block">
   <img align="center" alt="CSS" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg">
   <img align="center" alt="ReactJS" heigth="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg">
@@ -57,6 +57,21 @@ Neste sentido, criamos o InterConex, uma rede social que visa conectar empresas 
 
 <br>
 
+
+## 🔓 Como instalar:
+
+1. Crie uma pasta vazia em algum diretório do seu dispositivo
+2. Abra o terminal de comandos nesta pasta
+3. Clone o repositório com o comando ```git clone https://github.com/GustavoLino728/InterConex.git```
+4. Se estiver fora do VS Code, abra a pasta criada com ```code ./InterConex```
+5. Se estiver no VS Code, abra a pasta com ```cd ./InterConex```
+6. Instale as dependências, com as seguintes linhas de comando:
+   - ```npm install``` -> ```cd './frontend``` ```npm instal``` -> ```cd ..``` -> ```cd ./backend``` ```npm install```
+7. Volte para o diretório base com ```cd ..```
+8. Inicialize o app com ```npm run dev```
+9. Navegue até a url ```http://localhost:5173/``` em seu navegador
+
+<br>
 
 ## 🌐 Autores
 ---
