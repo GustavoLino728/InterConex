@@ -37,10 +37,10 @@ const Header = ({ handleShowNav }) => {
     }
   };
   const buscarEmpresas = async (e) => {
-    const value = e.target.value;
-    setSearchTerm(value);
+    e.preventDefault();
+
     try {
-        const response = await api.post('/search',{nome: value});
+        const response = await api.post('/search',{nome: searchTerm});
 
         if (response.status !== 200) {
             throw new Error('Erro ao buscar dados');
@@ -71,6 +71,7 @@ const Header = ({ handleShowNav }) => {
             onFocus={searchFocus}
             onBlur={searchBlur}
             />
+            <button type="submit" style={{ display: 'none' }} />
         </form>
       )}
 
@@ -83,12 +84,15 @@ const Header = ({ handleShowNav }) => {
     {showFilters && (
       <Filtro />
     )}
+
     {searchTerm && searchResults.length === 0 && (
       <p>Nenhum resultado encontrado</p>
     )}
+
     {searchTerm && searchResults.length > 0 && (
-      <SearchResults results={searchResults} terms={searchTerm}/>
+      <SearchResults results={searchResults}/>
     )}
+
   </>)
 }
 
