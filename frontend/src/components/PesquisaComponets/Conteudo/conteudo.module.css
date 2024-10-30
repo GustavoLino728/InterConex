@@ -3,15 +3,11 @@
     justify-content: center;
 }
 
-.containerConteudo {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    background-color: white;
-    margin:auto;
-    border-radius: 10px;
+.containerPesquisa {
+    color: aquamarine;
+    background-color: blueviolet;
 }
 
-.content {
-    height: 40rem;
+.contentPesquisa {
+    color: blue;
 }

@@ -1,16 +1,27 @@
-import ImagemTeste from '../../../assets/questions.png';
 import styles from './conteudo.module.css';
 
-const Conteudo = () => {
+const SearchResults = ({ results, terms }) => {
+    if (!results || results.length === 0) {
+      // Não exibe nada se não houver resultados
+      return (
+        <>
+        {terms && results.length === 0 && (
+            <p>Nenhum resultado encontrado</p>
+        )}
+        </>
+      )
+    }
+    
     return (
-        <div className={styles.body}>    
-            <div className={styles.containerConteudo}>
-                <img src={ImagemTeste} 
-                alt="Question Mark" 
-                className={styles.content}/>
-            </div>
-        </div>
-    )
-}
-
-export default Conteudo;
+      <div className={styles.containerPesquisa}>
+        <ul className={styles.containerPesquisa}>
+          {results.map((item, index) => (
+            // Exemplo: exibindo o nome de cada item
+            <li className={styles.contentPesquisa} key={index}>{item.nome}</li> 
+          ))}
+        </ul>
+      </div>
+    );
+};
+  
+export default SearchResults;

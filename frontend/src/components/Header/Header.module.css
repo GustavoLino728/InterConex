@@ -32,10 +32,10 @@
 }
   
 .pesquisa {
-    border: 2px solid #532567;
+    border: 1px solid #532567;
     border-radius: 15px;
     padding: 10px 200px 10px 15px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; 
 }
 
 .logo {

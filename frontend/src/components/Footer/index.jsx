@@ -1,5 +1,5 @@
 import styles from './Footer.module.css';
-import LogoImage from '../../assets/logoInterConex.jpg';
+import LogoImage from '../../assets/logoInterConexRedonda.png';
 import { faInstagram, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
