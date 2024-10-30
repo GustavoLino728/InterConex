@@ -5,10 +5,14 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import Filtro from '../PesquisaComponets/Filtro'
 import { api } from '../../services/api';
-import SearchResults from '../PesquisaComponets/Conteudo'
+import { useLocation } from 'react-router-dom'
+
+import Historico from '../../components/PesquisaComponets/Historico'
+import SearchResults from '../PesquisaComponets/Resultados'
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ handleShowNav }) => {
+  const location = useLocation();
 
   const [searchTerm, setSearchTerm] = useState('');
   const [showFilters, setShowFilters] = useState(false);
@@ -38,17 +42,19 @@ const Header = ({ handleShowNav }) => {
   };
   const buscarEmpresas = async (e) => {
     e.preventDefault();
-
+  
     try {
-        const response = await api.post('/search',{nome: searchTerm});
-
-        if (response.status !== 200) {
-            throw new Error('Erro ao buscar dados');
-        }
-
-        setSearchResults(response.data);
+      const response = await api.post('/search', { nome: searchTerm });
+      if (response.status !== 200) {
+        throw new Error('Erro ao buscar dados');
+      }
+  
+      // Combine os resultados de usuários e empresas
+      const { usuarios, empresas } = response.data;
+      const allResults = [...usuarios, ...empresas];
+      setSearchResults(allResults);
     } catch (error) {
-        console.error('Erro ao buscar dados',error);
+      console.error('Erro ao buscar dados', error);
     }
   };
 
@@ -81,18 +87,16 @@ const Header = ({ handleShowNav }) => {
       </div>
     </header>
 
-    {showFilters && (
-      <Filtro />
-    )}
+    {location.pathname === '/pesquisa' && showFilters && <Filtro />}
+      {location.pathname === '/pesquisa' && <Historico />}
 
-    {searchTerm && searchResults.length === 0 && (
-      <p>Nenhum resultado encontrado</p>
-    )}
+      {location.pathname === '/pesquisa' && searchTerm && searchResults.length === 0 && (
+        <p>Nenhum resultado encontrado</p>
+      )}
 
-    {searchTerm && searchResults.length > 0 && (
-      <SearchResults results={searchResults}/>
-    )}
-
+      {location.pathname === '/pesquisa' && (
+        <SearchResults results={searchResults} searchTerm={searchTerm}/>
+      )}
   </>)
 }
 

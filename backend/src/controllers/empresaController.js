@@ -80,27 +80,26 @@ class empresasController {
     // Requisição para buscar usuario ou empresa 
     static async requisicaoBuscar(req, res) {
         try {
-            const { nome } = req.query;
+            const { nome } = req.body;
     
             if (!nome) {
                 return res.status(400).json({ message: 'Nome é obrigatório.' });
             }
             
             // Buscar empresas com base no nome
-            const usuarios = await empresas.find({
+            const empresasEncontradas = await empresas.find({
                 nome: { $regex: nome, $options: 'i' } // Busca case-insensitive
             });
 
             //Busca usuarios com base no nome
-            const empresas = await usuarios.find({
+            const usuariosEncontrados = await usuarios.find({
                 nome: { $regex: nome, $options: 'i' }
-            })
+            });
     
-            if (usuarios.length === 0 && empresas.length === 0) {
+            if (usuariosEncontrados.length === 0 && empresasEncontradas.length === 0) {
                 return res.status(404).json({ message: 'Nenhum usuário ou empresa encontrada com esse nome.' });
             }
-    
-            return res.status(200).json({usuarios, empresas});
+            return res.status(200).json({ usuarios: usuariosEncontrados, empresas: empresasEncontradas });
         } catch (error) {
             console.error(error);
             return res.status(500).json({ message: 'Erro interno do servidor.' });

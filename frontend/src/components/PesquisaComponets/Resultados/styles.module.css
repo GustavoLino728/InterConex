@@ -1,0 +1,28 @@
+.resultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 50vh;
+  margin: 0 auto;
+}
+
+.placeholderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.placeholderIcon {
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.resultCard {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 8px 0;
+  text-align: left;
+}
