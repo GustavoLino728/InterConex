@@ -180,7 +180,7 @@ flowchart LR
   
   ```Conversa``` - //
   
-  ```Confirmação``` -  Através de um formulário inicial, o usuário acrescentará as informações de seu negócio e enviará para o banco de dados do app, gerando seu perfil que poderá ser acessado   por outros usuários.
+  ```Confirmação``` -  Através de um formulário inicial, o usuário acrescentará as informações de seu negócio e enviará para o banco de dados do app, gerando seu perfil que poderá ser acessado por outros usuários.
 
 ### Versão Inicial: 
 https://github.com/user-attachments/assets/a2f603e9-b130-48b5-92d3-113bac73d4ae
@@ -188,7 +188,19 @@ https://github.com/user-attachments/assets/a2f603e9-b130-48b5-92d3-113bac73d4ae
 </details>
 
 <details>
-  <summary><h3>🏅 02 - Visualização de perfil</h3></summary>
+  <summary><h3>🏅 02 - Login</h3></summary>
+  
+  ```História``` - Como empresa ou startup, eu gostaria de fazer login na minha conta.
+  
+  ```Conversa``` - //
+  
+  ```Confirmação``` -  Através de um formulário inicial, o usuário poderá inserir suas informações, que caso correspondam a algum cadastro, será efetuado o login.
+
+  
+</details>
+
+<details>
+  <summary><h3>🏅 03 - Visualização de perfil</h3></summary>
   
   ```História``` - Como usuário, eu gostaria de visualizar o meu perfil e alterar informações dele.
   
@@ -198,7 +210,7 @@ https://github.com/user-attachments/assets/a2f603e9-b130-48b5-92d3-113bac73d4ae
 </details>
 
 <details>
-  <summary><h3>🏅 03 - Pesquisa de empresas</h3></summary>
+  <summary><h3>🏅 04 - Pesquisa de empresas</h3></summary>
   
   ```História``` -  Como usuário, eu gostaria de pesquisar outras empresas.
   
@@ -213,7 +225,7 @@ https://github.com/user-attachments/assets/2085a864-4ff9-44ce-89de-3fb43d8bd698
 </details>
 
 <details>
-  <summary><h3>🏅 04 - Filtro por categorias</h3></summary>
+  <summary><h3>🏅 05 - Filtro por categorias</h3></summary>
   
   ```História``` - Como empresa ou startup, eu gostaria de filtrar outras empresas de acordo com categorias.
   
@@ -227,7 +239,7 @@ https://github.com/user-attachments/assets/2085a864-4ff9-44ce-89de-3fb43d8bd698
 ---
 
 <details>
-  <summary><h3>🏅 05 - Criação de Startups</h3></summary>
+  <summary><h3>🏅 06 - Criação de Startups</h3></summary>
   
   ```História``` - Como usuário, gostaria de criar startups.
   
@@ -237,7 +249,7 @@ https://github.com/user-attachments/assets/2085a864-4ff9-44ce-89de-3fb43d8bd698
 </details>
 
 <details>
-  <summary><h3>🏅 06 - Investimento em startups</h3></summary>
+  <summary><h3>🏅 07 - Investimento em startups</h3></summary>
   
   ```História``` - Como usuário ou CEO, gostaria de investir ou procurar investidores para o meu negócio.
   
@@ -252,7 +264,7 @@ https://github.com/user-attachments/assets/bb559634-dd06-45bb-8df3-f8b61f7efe76
 </details>
 
 <details>
-  <summary><h3>🏅 07 - Publicação de vagas</h3></summary>
+  <summary><h3>🏅 08 - Publicação de vagas</h3></summary>
   
   ```História``` - Como CEO de uma startup, eu gostaria de publicar vagas para projetos específicos ou para minha startup
   
@@ -264,7 +276,7 @@ https://github.com/user-attachments/assets/bb559634-dd06-45bb-8df3-f8b61f7efe76
 ---
 
 <details>
-  <summary><h3>🏅 08 - Espaço para freelancers</h3></summary>
+  <summary><h3>🏅 09 - Espaço para freelancers</h3></summary>
   
   ```História``` - Eu como usuário, gostaria de oferecer meus serviços como freelancer para outras empresas/startups.
   
@@ -274,7 +286,7 @@ https://github.com/user-attachments/assets/bb559634-dd06-45bb-8df3-f8b61f7efe76
 </details>
 
 <details>
-  <summary><h3>🏅 09 - Chat entre usuários</h3></summary>
+  <summary><h3>🏅 10 - Chat entre usuários</h3></summary>
   
   ```História``` - Como usuário, gostaria de ter contato com outros usuários.
   
@@ -289,7 +301,7 @@ https://github.com/user-attachments/assets/38c8b973-f085-448a-ada4-b8e93fbb669a
 </details>
 
 <details>
-  <summary><h3>🏅 10 - Serviços de avaliação</h3></summary>
+  <summary><h3>🏅 11 - Serviços de avaliação</h3></summary>
   
   ```História``` - Como usuário, gostaria de recomendar outras empresas, startups ou freelancers.
   
@@ -299,7 +311,7 @@ https://github.com/user-attachments/assets/38c8b973-f085-448a-ada4-b8e93fbb669a
 </details>
 
 <details>
-  <summary><h3>🏅 11 - Publicação de usuários</h3></summary>
+  <summary><h3>🏅 12 - Publicação de usuários</h3></summary>
   
   ```História``` - Como usuário, gostaria de fazer publicações e interagir com outros usuários.
   
