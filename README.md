@@ -210,13 +210,13 @@ https://github.com/user-attachments/assets/a2f603e9-b130-48b5-92d3-113bac73d4ae
 </details>
 
 <details>
-  <summary><h3>🏅 04 - Pesquisa de empresas</h3></summary>
+  <summary><h3>🏅 04 - Pesquisa de usuários</h3></summary>
   
-  ```História``` -  Como usuário, eu gostaria de pesquisar outras empresas.
+  ```História``` -  Como usuário, eu gostaria de pesquisar outros usuários.
   
   ```Conversa``` - //
   
-  ```Confirmação``` -  Através de uma barra de pesquisa, onde o usuário pode encontrar outras empresas.
+  ```Confirmação``` -  Através de uma barra de pesquisa, onde o usuário pode encontrar outros usuários, que serão exibidos na tela.
 
 ### Versão Inicial: 
 https://github.com/user-attachments/assets/2085a864-4ff9-44ce-89de-3fb43d8bd698
