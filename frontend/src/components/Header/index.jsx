@@ -24,7 +24,7 @@ const Header = ({ handleShowNav }) => {
     }
   };
 
-  const searchChange = async (e) => {
+  const searchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
 
@@ -35,13 +35,20 @@ const Header = ({ handleShowNav }) => {
     } else {
       setShowFilters(true);
     }
+  };
+  const buscarEmpresas = async (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
     try {
-      const response = await api.get('/buscar', {
-        params: { nome: value }
-      });
-      setSearchResults(response.data);
+        const response = await api.post('/search',{nome: value});
+
+        if (response.status !== 200) {
+            throw new Error('Erro ao buscar dados');
+        }
+
+        setSearchResults(response.data);
     } catch (error) {
-      console.error('Erro ao buscar dados:', error);
+        console.error('Erro ao buscar dados',error);
     }
   };
 
@@ -54,7 +61,7 @@ const Header = ({ handleShowNav }) => {
       </div>
 
       {location.pathname === '/pesquisa' && (
-        <div className={styles.headerPosition}>
+        <form onSubmit={buscarEmpresas} className={styles.headerPosition}>
             <input 
             className={styles.pesquisa} 
             placeholder='Pesquisar...'
@@ -64,7 +71,7 @@ const Header = ({ handleShowNav }) => {
             onFocus={searchFocus}
             onBlur={searchBlur}
             />
-        </div>
+        </form>
       )}
 
       <div className={styles.headerPosition}> 
